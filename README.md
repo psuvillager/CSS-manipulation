@@ -2,12 +2,13 @@
 - Three functions for adding and deleting CSS rulesets using JavaScript
 - Info re: creating and manipulating stylesheets (in document.stylesheets)  
 
-(Copied from: https://web.archive.org/web/20130709232042/http://www.hunlock.com/blogs/Totally_Pwn_CSS_with_Javascript)   
-See also:
-  https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet  
-  stackoverflow.com/questions/6620393/is-it-possible-to-alter-a-css-stylesheet-using-javascript-not-the-style-of-an/38133146#38133146  
-  www.howtocreate.co.uk/tutorials/javascript/domstylesheets  
-  www.howtocreate.co.uk/tutorials/javascript/domstructure#walkstyle  
+Copied from: https://web.archive.org/web/20130709232042/http://www.hunlock.com/blogs/Totally_Pwn_CSS_with_Javascript  
+
+See also:  
+- https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet  
+- https://stackoverflow.com/questions/6620393/is-it-possible-to-alter-a-css-stylesheet-using-javascript-not-the-style-of-an/38133146#38133146  
+- www.howtocreate.co.uk/tutorials/javascript/domstylesheets  
+- www.howtocreate.co.uk/tutorials/javascript/domstructure#walkstyle  
 
 
 __Totally Pwn CSS with Javascript__  
