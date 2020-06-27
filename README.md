@@ -10,7 +10,7 @@ Filed: Fri, Feb 16 2007 under Programming|| Tags: .css1 javascript css dynamic
 The last great frontier for a Javascript programmer is usually the direct manipulation of a stylesheet. While incredibly powerful tools, the documentation is sparse and the browsers rife with incompatibilities. You may be sending floating divisions flying across the screen playing videos of spanking kitties, but have you ever created a new stylesheet class on the fly? No? Read on!
 
 __Tools for the Toolbox__  
-We'll dive right in with three functions which will make working with stylesheets very trivial. __After the functions are documented there will be a short tutorial and reference for those who want to go beyond the basic tools.__
+We'll dive right in with three functions which will make working with stylesheets very trivial. After the functions are documented there will be a short tutorial and reference for those who want to go beyond the basic tools.
 
 function getCSSRule(ruleName, deleteFlag) {               // Return requested style obejct
    ruleName=ruleName.toLowerCase();                       // Convert test string to lower case.
@@ -129,26 +129,28 @@ __Methods__
 `document.styleSheets[0].addRule(".demoClass", "background-color: blue")`
 
 `insertRule(rule, index)`	FireFox	This is the same as IE save the rule is bundle in one string. .demoClass {background-color: blue}.
-`removeRule([index])`	IE	This will remove the first rule of the stylesheet if no index is specified or the rule at the index position.
-`deleteRule(index)`	FireFox	This is the same as IE, it will remove the rule at the index position.
+`removeRule([index])`	   IE	      This will remove the first rule of the stylesheet if no index is specified or the rule at the index position.
+`deleteRule(index)`	      FireFox	This is the same as IE, it will remove the rule at the index position.
 
 __Properties__  
-cssRules[]	FireFox	An array containing the rules for the current styleSheet
-rules[]	IE	An array containing the rules for the current styleSheet
-disabled	all	True if this stylesheet is disabled, false if its active.
-href	all	The source URL of this stylesheet, if any.
-imports[]	IE	An array of all the @import(ed) rules.
-length	all	The number of stylesheets in the array
-media	all	The media this stylesheet is active for (not always screen!)
-ownerNode	FireFox	returns the DOM parent of this object, usually link or style.
-owningElement	IE	returns the DOM parent of this object, usually link or style.
-ownerRule	FireFox	If this sheet is a child via @import, this points to the parent.
-parentStyleSheet	all	If this sheet is the product of a @page or @import, this property references the parent stylesheet.
-title	all	If the style or link tag defined a title attribute, here it is.
-type	all	If the style or link tag defined a type (text/css), here it is.
-document.stylesheets[x].cssRules[]  
+`cssRules[]`	      FireFox	An array containing the rules for the current styleSheet  
+`rules[]`	         IE	      An array containing the rules for the current styleSheet  
+`disabled`	         all	   True if this stylesheet is disabled, false if its active.  
+`href`	            all	   The source URL of this stylesheet, if any.  
+`imports[]`	         IE	      An array of all the @import(ed) rules.  
+`length`	            all	   The number of stylesheets in the array  
+`media`	            all	   The media this stylesheet is active for (not always screen!)  
+`ownerNode`	         FireFox	Returns the DOM parent of this object, usually link or style.  
+`owningElement`	   IE	      Returns the DOM parent of this object, usually link or style.  
+`ownerRule`	         FireFox	If this sheet is a child via @import, this points to the parent.  
+`parentStyleSheet`	all	   If this sheet is the product of a @page or @import, this property references the parent stylesheet.  
+`title`	            all	   If the style or link tag defined a title attribute, here it is.  
+`type`	            all	   If the style or link tag defined a type (text/css), here it is.  
 
-Once you have a styleSheet selected, you can access the __individual rules__ via the rules[] array for Internet Explorer or the cssRules[] array for Mozilla. For instance if you have a stylesheet defined as such…
+
+__document.stylesheets[x].cssRules[]__  
+
+Once you have a styleSheet selected, you can access the individual rules via the rules[] array for Internet Explorer or the cssRules[] array for Mozilla. For instance if you have a stylesheet defined as such…
 
 `<style>
    .global { background-color: white }
@@ -157,14 +159,14 @@ Once you have a styleSheet selected, you can access the __individual rules__ via
 
 `document.styleSheets[0].cssRules[0];`  
 That would give you the first rule of the first stylesheet, which in this case happens to be .global.  
-__cssRules[] and rules[]__ have the following properties.
+cssRules[] and rules[] have the following properties.
 
-__Properties__
-cssText	FireFox	Returns the styles of the present rule -- {float: left; text-align: right}
-length	all	Returns the number of rules in this stylesheet
-parentStyleSheet	all	Pointer to the styleSheet which contains these rules
-selectorText	all	this is the name of the rule. For instance using our example above: .global
-style	all	This is a style object that you can manipulate just like document.getElementById('someDiv').style
+__Properties__  
+`cssText`	         FireFox	Returns the styles of the present rule -- {float: left; text-align: right}  
+`length`	            all	   Returns the number of rules in this stylesheet  
+`parentStyleSheet`	all	   Pointer to the styleSheet which contains these rules  
+`selectorText`	      all	   This is the name of the rule. For instance using our example above: .global  
+`style`	            all	   This is a style object that you can manipulate just like document.getElementById('someDiv').style  
 The really important items here are .length (which lets you know how many times you're going to have to loop to check each cssRule[], selectorText which lets you look for a specific classname (or other selector) like .global and style which lets you manipulate the rule just like any other javascript .style.rule='value' object.
 
 Going back to our global example again. If we wanted to change its rule to be bold text then it's as simple as doing this...
